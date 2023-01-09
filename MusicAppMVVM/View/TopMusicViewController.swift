@@ -11,14 +11,11 @@ import CoreData
 class TopMusicViewController: UIViewController {
     
     var collectionView1 : UICollectionView?
-    
     var dicIdResults : [Int : Songs] = [:]
     //   For the segue
     var sendindex : Int = Int()
     var sendId : Int?
     //  For the like bottom
-    //    var musicAppViewModel.Likelist : [Int : Bool] = [:]
-    
     //    Call instance for other class
     let coreDataMusic = CoreDataMusic()
     let myGlobaConstants = MyGlobalConstats()
@@ -26,7 +23,6 @@ class TopMusicViewController: UIViewController {
     let musicAppViewModel = MusicAppViewModel()
     let detalViewControler = DetailViewController()
     //    This part is for triing to do some variable tipe COREDATA
-    
     private func bindf (){
         
         self.musicAppViewModel.refreshData = { [weak self] () in
@@ -41,8 +37,9 @@ class TopMusicViewController: UIViewController {
         self.coreDataMusic.myFetchStruc()
 
         self.musicAppViewModel.Makea100FalseDictList()
+        
 //        self.coreDataMusic.delAll()
-
+        
         self.bindf()
         self.musicAppViewModel.litleFunc()
         print(self.coreDataMusic.recoverdata?.compactMap{$0.name}.count as Any)
@@ -52,7 +49,6 @@ class TopMusicViewController: UIViewController {
         setUpCV()
         view.addSubview(self.collectionView1!)
     }
-    
     
     func setUpCV(){
         let layoutCV = UICollectionViewFlowLayout()
