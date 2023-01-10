@@ -24,25 +24,13 @@ class CoreDataMusic {
         }
         return container
     }()
-    
-    
-    
+ 
     
     func delete() {
         contexto.delete(NSManagedObject())
         self.mySaveContex()
     }
-    
-//    func makeDataStruct() -> Song {
-//        let song1 = Song(context: self.contexto)
-//        song1.name = "name1"
-//        song1.id = "1"
-//        self.mySaveContex()
-//
-//        return song1
-//
-//    }
-    
+
     func mySaveContex(){
         print("my save is runing")
         do{
@@ -55,9 +43,7 @@ class CoreDataMusic {
         
     }
     
-    
     func myFetchStruc(){
-        //        let context = self.contexto
         let request : NSFetchRequest<Song> = Song.fetchRequest()
         do{
             recoverdata = try contexto.fetch(request)
@@ -93,52 +79,10 @@ class CoreDataMusic {
         // persistent stores
         self.persistantContainer.loadPersistentStores {
             (store, error) in
-            // Handle errors
         }
         
     }
     
-    
-    
-//    func makeFavStruct(index : Int) -> Song {
-//        let song1 = Song(context: self.contexto)
-//        song1.name = TopMusicViewController().results?[index].name
-//        song1.id = TopMusicViewController().results?[index].id
-////        self.saveSong()
-//        self.mySaveContex()
-//        self.myFetchStruc()
-//        //        printContent(self.recoverdata?.compactMap{$0.id})
-//
-//        return song1
-//
-//    }
-////
 }
 
 
-
-//let storeContainer =
-//self.persistentContainer.persistentStoreCoordinator
-//
-//// Delete each existing persistent store
-//do {
-//    for store in storeContainer.persistentStores {
-//        try storeContainer.destroyPersistentStore(
-//            at: store.url!,
-//            ofType: store.type,
-//            options: nil
-//        )
-//    }}catch{print("No se puede borrar todo")}
-//
-//// Re-create the persistent container
-//self.persistentContainer = NSPersistentContainer(
-//    name: "MusicAppMVVM" // the name of
-//    // a .xcdatamodeld file
-//)
-//
-//// Calling loadPersistentStores will re-create the
-//// persistent stores
-//self.persistentContainer.loadPersistentStores {
-//    (store, error) in
-//    // Handle errors
-//}

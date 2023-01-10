@@ -13,6 +13,4 @@ protocol NetworkManagerType {
     
     func fetchDataRaw (request2: URLRequest? , completion: @escaping (Result <Data , Error >)-> Void )
     
-    
-    
 }
