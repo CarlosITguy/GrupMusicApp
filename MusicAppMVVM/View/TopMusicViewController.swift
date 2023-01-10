@@ -25,7 +25,7 @@ class TopMusicViewController: UIViewController {
     let network = Network()
     let musicAppViewModel = MusicAppViewModel()
     let detalViewControler = DetailViewController()
-    //    This part is for triing to do some variable tipe COREDATA
+    //    This part is for trying to do some variable tipe COREDATA
     
     private func bindf (){
         
