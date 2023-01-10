@@ -30,10 +30,10 @@ class MusicAppViewModel {
     
     var images : [Data] = []
     
-    //
+    // This function is for saving results
     
     func litleFunc(){
-        print("View wiil appear this moment")
+        print("little func runing")
         self.network.fetchResults(){allAboutMusic in
             guard let results = allAboutMusic?.feed.results else {return}
             self.results1 = results
@@ -120,18 +120,3 @@ class MusicAppViewModel {
         }
     }
 }
-
-    
-    //    func deleteAllData(_ entity:String) {
-    //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-    //        fetchRequest.returnsObjectsAsFaults = false
-    //        do {
-    //            let results = try self.coreDataMusic.contexto.fetch(fetchRequest)
-    //            for object in results {
-    //                guard let objectData = object as? NSManagedObject else {continue}
-    //                self.coreDataMusic.contexto.delete(objectData)
-    //            }
-    //        } catch let error {
-    //            print("Detele all data in \(entity) error :", error)
-    //        }
-    //    }
