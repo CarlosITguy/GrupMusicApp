@@ -47,7 +47,7 @@ class CoreDataMusic {
         let request : NSFetchRequest<Song> = Song.fetchRequest()
         do{
             recoverdata = try contexto.fetch(request)
-            print("el fetch funciono")
+            print("Fetch is working")
             
             
         }catch{
@@ -67,7 +67,7 @@ class CoreDataMusic {
                     ofType: store.type,
                     options: nil
                 )
-            }}catch{print("No se puede borrar todo")}
+            }}catch{print("You can't delete everything")}
         
         // Re-create the persistent container
         self.persistantContainer = NSPersistentContainer(
